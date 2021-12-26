@@ -10,22 +10,24 @@ namespace HW_02
     {
         static void Main(string[] args)
         {
-                      
-            var testAccount = new BankAccount {Balance = 200, Type = Type.EUR };
 
-            Console.WriteLine("Счет №" + "" + testAccount.Number + "\nБаланс " + testAccount.Balance + " " + testAccount.Type);
+            var testAccount = new BankAccount { Balance = 550, Type = Type.EUR };
 
-            Console.WriteLine();
+            var testAccount2 = new BankAccount { Balance = 300, Type = Type.EUR };
 
-            BankAccount.WhithDrow(1300,testAccount);
+            BankAccount.WhithDrow(500, testAccount);
 
             Console.WriteLine();
 
-            BankAccount.WhithDrow(100, testAccount);
+            BankAccount.WhithDrow(400, testAccount2);
 
             Console.WriteLine();
 
-            BankAccount.PutOnTheAccount(1000, testAccount);
+            BankAccount.PutOnTheAccount(450, testAccount);
+
+            Console.WriteLine();
+
+            testAccount.TransferringMoney(testAccount2, 100);
 
             Console.ReadLine();
         }

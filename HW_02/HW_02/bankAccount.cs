@@ -21,7 +21,7 @@ namespace HW_02
 
         private Type _type;
 
-        // public static int _rndNumber = NumberGen(); Тестовая переменная для рэндомного счета
+        private static int _counter = 1;
 
         public int Number
         {
@@ -29,8 +29,7 @@ namespace HW_02
             {
                 return _number;
             }
-
-            set
+            private set
             {
                 _number = value;
             }
@@ -62,52 +61,42 @@ namespace HW_02
                 _type = value;
             }
         }
-
+       
         public BankAccount() : this(0)
         {
-            Number = NumberGen();
+            RandomNumber();
         }
 
-        public BankAccount(int number) : this(1, 2)
+        public BankAccount(int balance) : this(balance,Type.EUR)
         {
-            Number = NumberGen();
+            RandomNumber();
         }
 
-        public BankAccount(int number, int balance) : this(2, 3, Type.RUB)
+        public BankAccount(int balance, Type type) 
         {
-            Number = NumberGen();
-        }
-
-        public BankAccount(int number, int balance, Type type)
-        {
-            Number = NumberGen();
+            RandomNumber();
             Balance = balance;
             Type = type;
-
         }
-
-        public static int NumberGen()
-
+      
+        private void RandomNumber()
         {
-
-            var rnd = new Random();
-
-            return rnd.Next(1000, 1000000);
-
+            Number = _counter++;
         }
 
+       
         public static void WhithDrow(int summ, BankAccount bankAccount)
         {
             if ((bankAccount.Balance) >= summ)
             {
                 bankAccount.Balance = bankAccount.Balance - summ;
 
-                Console.WriteLine($"Сумма {summ} {bankAccount.Type} снята. Баланс составляет: {bankAccount.Balance} {bankAccount.Type}");
+                Console.WriteLine($"Сумма {summ} {bankAccount.Type} снята cо счета № {bankAccount.Number}. Баланс составляет: {bankAccount.Balance} {bankAccount.Type}");
             }
 
             else
             {
-                Console.WriteLine("На балансе не достаточно средств");
+                Console.WriteLine($"На счете № {bankAccount.Number} не достаточно средств");
             }
 
         }
@@ -116,7 +105,22 @@ namespace HW_02
         {
             bankAccount.Balance = bankAccount.Balance + summ;
 
-            Console.WriteLine($"Пополнение на сумму: {summ} {bankAccount.Type}. Баланс составляет: {bankAccount.Balance} {bankAccount.Type} ");
+            Console.WriteLine($"Пополнение на сумму: {summ} {bankAccount.Type} на счет № {bankAccount.Number}. Баланс составляет: {bankAccount.Balance} {bankAccount.Type} ");
+        }
+
+        public void TransferringMoney (BankAccount bankAccount, int summ)
+        {
+
+            if (bankAccount.Balance < summ || bankAccount is null)
+            {
+                return;
+            }
+
+            bankAccount.Balance -= summ;
+
+            Balance += summ;
+
+            Console.WriteLine($"Сумма {summ} {bankAccount.Type} переведена со счета № {bankAccount.Number} на № {Number}");
         }
 
     }
