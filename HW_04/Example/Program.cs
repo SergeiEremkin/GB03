@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
+
 namespace HW_04
 {
 
@@ -12,15 +13,14 @@ namespace HW_04
 
         static void Main(string[] args)
         {
-             
-            
-            Creator.CreateBuild(new Building { Apartment = 25, Floor = 2, Height = 10, Front = 45, });
 
-            Creator.CreateBuild(new Building { Apartment = 25, Floor = 2, Height = 10, Front = 45, });
+            Creator.CreateBuild(new Building(23, 50, 100, 23));
 
-            Creator.CreateBuild(new Building { Apartment = 25, Floor = 2, Height = 10, Front = 45, });
+            Creator.CreateBuild(new Building (34));
 
-            Creator.CreateBuild(new Building { Apartment = 25, Floor = 2, Height = 10, Front = 45, });
+            Creator.CreateBuild(new Building (45, 56, 67));
+
+            Creator.CreateBuild(new Building());
 
             Creator.DataInfo();
 
@@ -30,10 +30,6 @@ namespace HW_04
             
             Creator.DataInfo();
             
-            
-
-
-
             Console.ReadLine();
 
         }

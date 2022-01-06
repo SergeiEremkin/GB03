@@ -10,8 +10,9 @@ namespace HW_04
       public class Creator : Building
     {
 
-        private static Building _building;
+        private static Building _building = new Building();
         private static Hashtable _data = new Hashtable();
+        private static int _key = 1;
 
         public static Building Building
 
@@ -49,6 +50,24 @@ namespace HW_04
             }
         }
 
+        public static int Key
+
+        {
+            get
+
+            {
+
+                return _key;
+
+            }
+
+            set
+
+            {
+                _key = value;
+            }
+        }
+
 
         private Creator ()
 
@@ -60,9 +79,71 @@ namespace HW_04
         public static void CreateBuild(Building building)
 
         {
+
             Building = building;
 
-            Data.Add(building.ID, building);
+            Building = new Building();
+
+            Data.Add(Key, Building);
+
+            Key++;
+
+        }
+
+        public static void CreateBuild(Building building, int hight)
+
+        {
+
+            Building = building;
+
+            Building = new Building { Height = hight };
+
+            Data.Add(Key, Building);
+
+            Key++;
+
+        }
+
+        public static void CreateBuild(Building building, int hight, int floor )
+
+        {
+
+            Building = building;
+
+            Building = new Building { Height = hight, Floor = floor };
+
+            Data.Add(Key, Building);
+
+            Key++;
+
+        }
+
+        public static void CreateBuild(Building building, int hight, int floor, int apartment)
+
+        {
+
+            Building = building;
+
+            Building = new Building { Height = hight, Floor = floor, Apartment = apartment };
+
+            Data.Add(Key, Building);
+
+            Key++;
+
+        }
+
+        public static void CreateBuild(Building building, int hight, int floor, int apartment, int front)
+
+        {
+
+            Building = building;
+
+            Building = new Building { Height = hight, Floor = floor, Apartment = apartment, Front = front};
+
+            Data.Add(Key, Building);
+
+            Key++;
+
         }
 
 

@@ -11,11 +11,11 @@ namespace HW_04
     {
 
         private  int _id;
-        protected int _height;
-        protected int _floor;
-        protected int _apartment;
-        protected int _front;
-        protected static int _idCounter = 1;
+        private int _height;
+        private int _floor;
+        private int _apartment;
+        private int _front;
+        private static int _idCounter = 1;
 
 
         public int ID
