@@ -27,12 +27,6 @@ namespace HW_05
 
         }
 
-        public int Convert
-
-        {
-            get => _numerator / _denominator;
-        }
-
         public int Numerator
 
         {
@@ -309,17 +303,26 @@ namespace HW_05
             
         }
 
-        public static explicit operator float(RationalNumber r1)
+        public static implicit operator int(RationalNumber r1)
         {
             
-            return r1.Convert;
+            int result = r1.Numerator / r1.Denominator;
+
+            return result;
         }
 
-        public static explicit operator int(RationalNumber r1)
+        public static implicit operator float(RationalNumber r1)
         {
 
-            return r1.Convert;
+            float num = r1.Numerator;
+
+            float den = r1.Denominator;
+
+            float result = num / den;
+
+            return result;
         }
+
 
 
 

@@ -26,10 +26,6 @@ namespace HW_05
 
             Console.WriteLine(number3);
 
-            float a = (float)number1;
-
-            Console.WriteLine(a);
-
             var complex = new ComplexNumber(2, 3);
 
             var complex2 = new ComplexNumber(3, 5);
@@ -49,6 +45,12 @@ namespace HW_05
             complex.Equals(complex2);
 
             Console.WriteLine(complex.Equals(complex2));
+
+            float a;
+
+            a = number1;
+
+            Console.WriteLine(a);
 
             Console.ReadLine();
             
