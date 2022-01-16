@@ -305,22 +305,14 @@ namespace HW_05
 
         public static implicit operator int(RationalNumber r1)
         {
-            
-            int result = r1.Numerator / r1.Denominator;
 
-            return result;
+            return r1.Numerator / r1.Denominator;
         }
 
         public static implicit operator float(RationalNumber r1)
         {
 
-            float num = r1.Numerator;
-
-            float den = r1.Denominator;
-
-            float result = num / den;
-
-            return result;
+            return (float)r1.Numerator / r1.Denominator; 
         }
 
 

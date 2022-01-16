@@ -123,5 +123,52 @@ namespace HW_02
             Console.WriteLine($"Сумма {summ} {bankAccount.Type} переведена со счета № {bankAccount.Number} на № {Number}");
         }
 
+        public override string ToString()
+        {
+            return $"Acc. {Number} Balance {Balance} {Type}";
+        }
+
+        public override bool Equals(object obj)
+
+        {
+            return base.Equals(obj as BankAccount);
+        }
+
+        public bool Equals(BankAccount bankAccount)
+
+        {
+            if (bankAccount is null)
+            {
+                return false;
+            }
+
+            if (Object.ReferenceEquals(this, bankAccount))
+
+            {
+                return true;
+            }
+
+            return (Number == bankAccount.Number && Balance == bankAccount.Balance && Type == bankAccount.Type);
+        }
+
+        public override int GetHashCode()
+        {
+            return (Number, Balance, Type).GetHashCode();
+        }
+
+        public static bool operator ==(BankAccount bankAccount1, BankAccount bankAccount2)
+        {
+
+            return (bankAccount1.Number == bankAccount2.Number && bankAccount1.Balance == bankAccount2.Balance && 
+                bankAccount1.Type == bankAccount2.Type);
+        }
+
+        public static bool operator !=(BankAccount bankAccount1, BankAccount bankAccount2)
+        {
+
+            return (bankAccount1.Number != bankAccount2.Number || bankAccount1.Balance != bankAccount2.Balance ||
+                bankAccount1.Type != bankAccount2.Type);
+        }
+
     }
 }
