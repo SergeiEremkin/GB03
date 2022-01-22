@@ -10,18 +10,12 @@ namespace HW_06
     {
         static void Main(string[] args)
         {
-            Figure figure = new Figure("red", true);
-            Figure figure2 = new Figure("yellow", false);
-            figure.ChangeColor("Green");
-            figure.Visibility();
-            figure2.Visibility();
-            figure.MoveX(1);
-            Point point = new Point(1, 2);
-            point.MoveY(3);
-            Console.WriteLine(figure.ToString());
+            Circle circle = new Circle { Color = "red", IsVisible = true};
+            circle.Move(2, 3);
+            circle.ShowInfo();
+            Console.WriteLine(circle.Area(5));
             Rectangle rectangle = new Rectangle();
-            point.ChangeColor("green");
-            Console.WriteLine(rectangle.ToString());
+            Console.WriteLine(rectangle.Area(3, 4));
             Console.ReadLine();
         }
     }

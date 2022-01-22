@@ -6,25 +6,11 @@ using System.Threading.Tasks;
 
 namespace HW_06
 {
-    sealed class Circle : Point
+    public class Circle : Point
     {
-
-        public double CircleArea(int r)
+        public override double Area(double r)
         {
-           return (r * r) * Math.PI;
+            return (r * r) * Math.PI;
         }
-
-        public override void MoveX(int x)
-        {
-            Console.WriteLine($"Circle move by X = {x}");
-        }
-
-        public override void MoveY(int y)
-        {
-            Console.WriteLine($"Circle move by Y = {y}");
-        }
-
-
-        
     }
 }
