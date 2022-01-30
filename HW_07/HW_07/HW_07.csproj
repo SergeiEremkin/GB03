@@ -4,10 +4,10 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{13B3C64F-FD6E-4720-A1B6-2190E5421F86}</ProjectGuid>
+    <ProjectGuid>{D2A40376-0A60-4578-ABF4-1C4454CFD5A4}</ProjectGuid>
     <OutputType>Exe</OutputType>
-    <RootNamespace>HW_06</RootNamespace>
-    <AssemblyName>HW_06</AssemblyName>
+    <RootNamespace>HW_07</RootNamespace>
+    <AssemblyName>HW_07</AssemblyName>
     <TargetFrameworkVersion>v4.8</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
@@ -43,13 +43,11 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="IActionWithFigure.cs" />
-    <Compile Include="Circle.cs" />
-    <Compile Include="Figure.cs" />
-    <Compile Include="Point.cs" />
+    <Compile Include="ACoder.cs" />
+    <Compile Include="BCoder.cs" />
+    <Compile Include="ICoder.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Rectangle .cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
