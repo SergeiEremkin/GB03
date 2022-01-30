@@ -11,9 +11,12 @@ namespace HW_02
         static void Main(string[] args)
         {
 
-            var testAccount = new BankAccount { Balance = 550, Type = Type.EUR };
+            var testAccount = new BankAccount(300, Type.USD);
 
-            var testAccount2 = new BankAccount { Balance = 300, Type = Type.EUR };
+
+            var testAccount2 = new BankAccount(300, Type.USD);
+
+            var testAccount3 = new BankAccount( 200, Type.RUB);
 
             BankAccount.WhithDrow(500, testAccount);
 
@@ -25,9 +28,17 @@ namespace HW_02
 
             BankAccount.PutOnTheAccount(450, testAccount);
 
-            Console.WriteLine();
+            Console.WriteLine(testAccount = testAccount2);
 
             testAccount.TransferringMoney(testAccount2, 100);
+
+            testAccount.Equals(testAccount2);
+
+            Console.WriteLine(testAccount.GetHashCode());
+
+            Console.WriteLine(testAccount2.GetHashCode());
+
+            Console.WriteLine(testAccount3.ToString());
 
             Console.ReadLine();
         }
